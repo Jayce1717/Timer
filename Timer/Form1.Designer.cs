@@ -55,6 +55,9 @@ namespace Timer
             this.btnView = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTime = new System.Windows.Forms.Label();
+            this.lblTwo = new System.Windows.Forms.Label();
+            this.lblPercent = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -335,12 +338,48 @@ namespace Timer
             this.lblTime.Text = "12:12:12";
             this.lblTime.Click += new System.EventHandler(this.lblTime_Click);
             // 
+            // lblTwo
+            // 
+            this.lblTwo.AutoSize = true;
+            this.lblTwo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTwo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTwo.Location = new System.Drawing.Point(652, 62);
+            this.lblTwo.Name = "lblTwo";
+            this.lblTwo.Size = new System.Drawing.Size(93, 18);
+            this.lblTwo.TabIndex = 26;
+            this.lblTwo.Text = "Current time:";
+            // 
+            // lblPercent
+            // 
+            this.lblPercent.AutoSize = true;
+            this.lblPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPercent.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblPercent.Location = new System.Drawing.Point(596, 61);
+            this.lblPercent.Name = "lblPercent";
+            this.lblPercent.Size = new System.Drawing.Size(54, 20);
+            this.lblPercent.TabIndex = 28;
+            this.lblPercent.Text = "100%";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(469, 62);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(128, 18);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Percent complete:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(834, 261);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lblPercent);
+            this.Controls.Add(this.lblTwo);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnView);
@@ -403,6 +442,9 @@ namespace Timer
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Label lblTwo;
+        private System.Windows.Forms.Label lblPercent;
+        private System.Windows.Forms.Label label6;
     }
 }
 

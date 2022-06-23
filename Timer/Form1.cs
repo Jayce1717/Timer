@@ -13,14 +13,9 @@ namespace Timer
 {
     public partial class Form1 : Form
     {
-        DateTime dtIn, dtOut, dtCurrent = new DateTime(2022, 1, 1, 12, 00, 00);
+        DateTime dtIn, dtOut, dtCurrent, dtSec = new DateTime(2022, 1, 1, 12, 00, 00);
         bool go = false;
-        bool sec = false;
-        bool secinit = true;
-        DateTime dtSec = new DateTime();
         bool view = false;
-
-        int test;
 
         public Form1()
         {
@@ -73,54 +68,105 @@ namespace Timer
 
         private void running()
         {
+            dtSec = DateTime.Now.AddSeconds(1);
             while (go) {
-                secUpdate();
-                updateLB();
-                updateTimeLbl();
-                if (sec) 
+                Application.DoEvents();
+                updateLbls();
+                if (hasBeenSecond() == true)
                 {
-                    test++;
                     dtCurrent = dtCurrent.AddSeconds(1);
-                    sec = false;
+                    dtSec = DateTime.Now.AddSeconds(1);
+                    incrementLB();
                 }
-               go = doneCheck();
-                lblOne.Text = test.ToString();
+                go = doneCheck();
             }
             lblTime.Text = "";
             return;
         }
 
-        private void secUpdate()
+        private bool hasBeenSecond()
         {
-            if (secinit)
+            DateTime comparor = DateTime.Now;
+            if (comparor >= dtSec)
             {
-                dtSec = DateTime.Now;
-                secinit = false;
-            }
-            
-            DateTime two = DateTime.Now;
-            if (sec)
-            {
-                dtSec = DateTime.Now;
-            }
-
-            if (dtSec.Minute != two.Minute)
-            {
-                sec = true;
+                return true;
             }
             else
             {
-                sec = false;
+                return false;
             }
         }
 
-   
+        private void finished()
+        {
+            pbOne.Value = 100;
+            lblTime.Text = "";
+            lblOne.Text = "Complete";
+            go = false;
+        }
 
-        private void updateTimeLbl()
+        private void updateLbls()
         {
             string hour;
             string min;
             string sec;
+            DateTime dtTest = new DateTime();
+
+            double countOne;
+            double countTwo;
+            //int countThree;
+            //string remHour;
+            //string remMin;
+            //string remSec;
+            double dblRatio;
+            int percent;
+
+            countOne = 0;
+            dtTest = dtIn;
+            while (dtTest < dtCurrent)
+            {
+                countOne++;
+                dtTest = dtTest.AddSeconds(1);
+            }
+            countTwo = 0;
+            dtTest = dtIn;
+            while (dtTest < dtOut)
+            {
+                countTwo++;
+                dtTest = dtTest.AddSeconds(1);
+            }
+
+            dblRatio = (countOne / countTwo) * 100;
+            percent = ((int)dblRatio);
+            lblPercent.Text = percent.ToString() + "%";
+
+            //countThree = ((int)countTwo - (int)countOne);
+            //DateTime dtCount = new DateTime(2022, 1, 1, 0, 00, 00);
+            //for (int i = 0; i < countThree; i++)
+            //{
+            //    dtCount.AddSeconds(1);
+            //}
+
+            //remHour = dtCount.Hour.ToString();
+            //if (dtCount.Minute < 10) 
+            //{
+            //    remMin = "0" + dtCount.Minute.ToString();
+            //}
+            //else
+            //{
+            //    remMin = dtCount.Minute.ToString();
+            //}
+
+            //if (dtCount.Second < 10)
+            //{
+            //    remSec = "0" + dtCount.Second.ToString();
+            //}
+            //else
+            //{
+            //    remSec = dtCount.Second.ToString();
+            //}
+
+            //lblRemain.Text = remHour + ":" + remMin + ":" + remSec;
 
             if (dtCurrent.Hour > 12)
             {
@@ -129,10 +175,29 @@ namespace Timer
             else
             {
                 hour = dtCurrent.Hour.ToString();
-            }          
-            min = dtCurrent.Minute.ToString();
-            sec = dtCurrent.Second.ToString();
+            }
+
+            if (dtCurrent.Minute < 10)
+            {
+                min = "0" + dtCurrent.Minute.ToString();
+            }
+            else
+            {
+                min = dtCurrent.Minute.ToString();
+            }
+
+            if (dtCurrent.Second < 10)
+            {
+                sec = "0" + dtCurrent.Second.ToString();
+            }
+            else
+            {
+                sec = dtCurrent.Second.ToString();
+            }
+
             lblTime.Text = hour + ":" + min + ":" + sec;
+
+
         }
 
         private bool theChecker()
@@ -224,11 +289,12 @@ namespace Timer
         {
             if (dtCurrent >= dtOut)
             {
-                return false;
+                finished();
+                return false; //This means it is done. I know its backwards
             }
             else
             {
-                return true;
+                return true; //Means not yet done
             }
         }
         
@@ -259,6 +325,8 @@ namespace Timer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            lblPercent.Text = "";
+            lblTime.Text = "";
             DateTime init = DateTime.Now;
             if (init.Hour > 12)
             {
@@ -291,12 +359,17 @@ namespace Timer
             }
         }
 
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblTime_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void updateLB()
+        private void incrementLB()
         {
             pbOne.PerformStep();
         }
