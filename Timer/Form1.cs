@@ -15,6 +15,12 @@ namespace Timer
     {
         DateTime dtIn, dtOut, dtCurrent = new DateTime(2022, 1, 1, 12, 00, 00);
         bool go = false;
+        bool sec = false;
+        bool secinit = true;
+        DateTime dtSec = new DateTime();
+        bool view = false;
+
+        int test;
 
         public Form1()
         {
@@ -43,6 +49,7 @@ namespace Timer
             dtOut= new DateTime(2022, 1, 1, 12, 00, 00);
             dtCurrent = new DateTime(2022, 1, 1, 12, 00, 00);
             lblOne.Text = "Status";
+            lblTime.Text = "";
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -67,30 +74,65 @@ namespace Timer
         private void running()
         {
             while (go) {
+                secUpdate();
                 updateLB();
-                waitMs(1000);
-                dtCurrent = dtCurrent.AddSeconds(1);
+                updateTimeLbl();
+                if (sec) 
+                {
+                    test++;
+                    dtCurrent = dtCurrent.AddSeconds(1);
+                    sec = false;
+                }
                go = doneCheck();
+                lblOne.Text = test.ToString();
             }
+            lblTime.Text = "";
             return;
         }
 
-        public void waitMs(int milliseconds)
+        private void secUpdate()
         {
-            System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
-            if (milliseconds == 0 || milliseconds < 0) return;
-            timer1.Interval = milliseconds;
-            timer1.Enabled = true;
-            timer1.Start();
-            timer1.Tick += (s, e) =>
+            if (secinit)
             {
-                timer1.Enabled = false;
-                timer1.Stop();
-            };
-            while (timer1.Enabled)
-            {
-                Application.DoEvents();
+                dtSec = DateTime.Now;
+                secinit = false;
             }
+            
+            DateTime two = DateTime.Now;
+            if (sec)
+            {
+                dtSec = DateTime.Now;
+            }
+
+            if (dtSec.Minute != two.Minute)
+            {
+                sec = true;
+            }
+            else
+            {
+                sec = false;
+            }
+        }
+
+   
+
+        private void updateTimeLbl()
+        {
+            string hour;
+            string min;
+            string sec;
+
+            if (dtCurrent.Hour > 12)
+            {
+                hour = (dtCurrent.Hour - 12).ToString();
+            }
+            else
+            {
+                hour = dtCurrent.Hour.ToString();
+            }          
+            min = dtCurrent.Minute.ToString();
+            sec = dtCurrent.Second.ToString();
+            lblTime.Text = hour + ":" + min + ":" + sec;
         }
 
         private bool theChecker()
@@ -229,6 +271,29 @@ namespace Timer
                 rbCurrentAM.Checked = true;
             }
             tbCurrentMin.Text = init.Minute.ToString();
+        }
+
+        private void lblOne_Click(object sender, EventArgs e)
+        {
+            lblOne.Visible = !lblOne.Visible;
+        }
+
+        private void btnView_Click(object sender, EventArgs e)
+        {
+            view = !view;
+            if (view)
+            {
+                this.Size = new Size(850, 150);
+            }
+            else
+            {
+                this.Size = new Size(850, 300);
+            }
+        }
+
+        private void lblTime_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void updateLB()
