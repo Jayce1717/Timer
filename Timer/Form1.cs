@@ -215,6 +215,22 @@ namespace Timer
             pbOne.Step = 1;
          }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            DateTime init = DateTime.Now;
+            if (init.Hour > 12)
+            {
+                tbCurrentHour.Text = (init.Hour - 12).ToString();
+                rbCurrentPM.Checked = true;
+            }
+            else
+            {
+                tbCurrentHour.Text = init.Hour.ToString();
+                rbCurrentAM.Checked = true;
+            }
+            tbCurrentMin.Text = init.Minute.ToString();
+        }
+
         private void updateLB()
         {
             pbOne.PerformStep();
