@@ -498,6 +498,48 @@ namespace Timer
 
         }
 
+        private void rbInAM_CheckedChanged(object sender, EventArgs e)
+        {
+            if(rbInPM.Checked == true)
+            {
+                rbInPM.Font = new Font(rbInPM.Font, FontStyle.Bold);
+                rbInAM.Font = new Font(rbInAM.Font, FontStyle.Regular);
+            }
+            else
+            {
+                rbInAM.Font = new Font(rbInAM.Font, FontStyle.Bold);
+                rbInPM.Font = new Font(rbInPM.Font, FontStyle.Regular);
+            }
+        }
+
+        private void rbCurrentAM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbCurrentPM.Checked == true)
+            {
+                rbCurrentPM.Font = new Font(rbCurrentPM.Font, FontStyle.Bold);
+                rbCurrentAM.Font = new Font(rbCurrentAM.Font, FontStyle.Regular);
+            }
+            else
+            {
+                rbCurrentAM.Font = new Font(rbCurrentAM.Font, FontStyle.Bold);
+                rbCurrentPM.Font = new Font(rbCurrentPM.Font, FontStyle.Regular);
+            }
+        }
+
+        private void rbOutAM_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbOutPM.Checked == true)
+            {
+                rbOutPM.Font = new Font(rbOutPM.Font, FontStyle.Bold);
+                rbOutAM.Font = new Font(rbOutAM.Font, FontStyle.Regular);
+            }
+            else
+            {
+                rbOutAM.Font = new Font(rbOutAM.Font, FontStyle.Bold);
+                rbOutPM.Font = new Font(rbOutPM.Font, FontStyle.Regular);
+            }
+        }
+
         private void lblTime_Click(object sender, EventArgs e)
         {
 

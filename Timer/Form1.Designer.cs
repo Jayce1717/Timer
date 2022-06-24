@@ -211,14 +211,16 @@ namespace Timer
             // 
             this.rbCurrentAM.AutoSize = true;
             this.rbCurrentAM.Checked = true;
+            this.rbCurrentAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbCurrentAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rbCurrentAM.Location = new System.Drawing.Point(6, 12);
             this.rbCurrentAM.Name = "rbCurrentAM";
-            this.rbCurrentAM.Size = new System.Drawing.Size(41, 17);
+            this.rbCurrentAM.Size = new System.Drawing.Size(43, 17);
             this.rbCurrentAM.TabIndex = 13;
             this.rbCurrentAM.TabStop = true;
             this.rbCurrentAM.Text = "AM";
             this.rbCurrentAM.UseVisualStyleBackColor = true;
+            this.rbCurrentAM.CheckedChanged += new System.EventHandler(this.rbCurrentAM_CheckedChanged);
             // 
             // rbCurrentPM
             // 
@@ -255,19 +257,22 @@ namespace Timer
             // 
             this.rbInAM.AutoSize = true;
             this.rbInAM.Checked = true;
+            this.rbInAM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rbInAM.Location = new System.Drawing.Point(6, 12);
             this.rbInAM.Name = "rbInAM";
-            this.rbInAM.Size = new System.Drawing.Size(41, 17);
+            this.rbInAM.Size = new System.Drawing.Size(43, 17);
             this.rbInAM.TabIndex = 13;
             this.rbInAM.TabStop = true;
             this.rbInAM.Text = "AM";
             this.rbInAM.UseVisualStyleBackColor = true;
+            this.rbInAM.CheckedChanged += new System.EventHandler(this.rbInAM_CheckedChanged);
             // 
             // rbInPM
             // 
             this.rbInPM.AutoSize = true;
-            this.rbInPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rbInPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbInPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(250)))), ((int)(((byte)(190)))));
             this.rbInPM.Location = new System.Drawing.Point(53, 12);
             this.rbInPM.Name = "rbInPM";
             this.rbInPM.Size = new System.Drawing.Size(41, 17);
@@ -295,15 +300,17 @@ namespace Timer
             this.rbOutAM.TabIndex = 13;
             this.rbOutAM.Text = "AM";
             this.rbOutAM.UseVisualStyleBackColor = true;
+            this.rbOutAM.CheckedChanged += new System.EventHandler(this.rbOutAM_CheckedChanged);
             // 
             // rbOutPM
             // 
             this.rbOutPM.AutoSize = true;
             this.rbOutPM.Checked = true;
+            this.rbOutPM.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbOutPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.rbOutPM.Location = new System.Drawing.Point(53, 12);
             this.rbOutPM.Name = "rbOutPM";
-            this.rbOutPM.Size = new System.Drawing.Size(41, 17);
+            this.rbOutPM.Size = new System.Drawing.Size(43, 17);
             this.rbOutPM.TabIndex = 14;
             this.rbOutPM.TabStop = true;
             this.rbOutPM.Text = "PM";
@@ -431,7 +438,7 @@ namespace Timer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(40)))), ((int)(((byte)(40)))));
             this.ClientSize = new System.Drawing.Size(834, 203);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnColor);
