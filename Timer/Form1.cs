@@ -338,7 +338,15 @@ namespace Timer
                 tbCurrentHour.Text = init.Hour.ToString();
                 rbCurrentAM.Checked = true;
             }
-            tbCurrentMin.Text = init.Minute.ToString();
+            if (init.Minute < 10)
+            {
+                tbCurrentMin.Text = "0" + init.Minute.ToString();
+            }
+            else
+            {
+                tbCurrentMin.Text = init.Minute.ToString();
+            }
+            tbInHour.Focus();
         }
 
         private void lblOne_Click(object sender, EventArgs e)
@@ -351,17 +359,27 @@ namespace Timer
             view = !view;
             if (view)
             {
-                this.Size = new Size(850, 150);
+                this.Size = new Size(850, 109);
             }
             else
             {
-                this.Size = new Size(850, 300);
+                this.Size = new Size(850, 242);
             }
         }
 
         private void label5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnStats_Click(object sender, EventArgs e)
+        {
+            lblStatPercent.Visible = !lblStatPercent.Visible;
+            lblPercent.Visible = !lblPercent.Visible;
+            lblStatTime.Visible = !lblStatTime.Visible;
+            lblTime.Visible = !lblTime.Visible;
+            lblOne.Visible = !lblOne.Visible;
+            lblStatusLabel.Visible = !lblStatusLabel.Visible;
         }
 
         private void lblTime_Click(object sender, EventArgs e)
