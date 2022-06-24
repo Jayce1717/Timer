@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
+using System.Runtime.InteropServices;
 
 namespace Timer
 {
@@ -16,6 +16,9 @@ namespace Timer
         DateTime dtIn, dtOut, dtCurrent, dtSec = new DateTime(2022, 1, 1, 12, 00, 00);
         bool go = false;
         bool view = false;
+        bool specialView = false;
+        bool cleared = false;
+        int colorState = 0;
 
         public Form1()
         {
@@ -29,6 +32,7 @@ namespace Timer
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            cleared = true;
             tbInHour.Text = "";
             tbInMin.Text = "";
             tbCurrentHour.Text = "";
@@ -45,6 +49,8 @@ namespace Timer
             dtCurrent = new DateTime(2022, 1, 1, 12, 00, 00);
             lblOne.Text = "Cleared";
             lblTime.Text = "";
+            lblPercent.Text = "";
+            pbOne.Style = ProgressBarStyle.Marquee;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -67,6 +73,7 @@ namespace Timer
 
         private void running()
         {
+            pbOne.Style = ProgressBarStyle.Continuous;
             dtSec = DateTime.Now.AddSeconds(1);
             while (go) {
                 lblOne.Text = "Running";
@@ -78,7 +85,12 @@ namespace Timer
                     dtSec = DateTime.Now.AddSeconds(1);
                     incrementLB();
                 }
-                go = doneCheck();
+                if (!cleared)
+                {
+                    go = doneCheck();
+                    cleared = false;
+                }
+
             }
             return;
         }
@@ -99,13 +111,20 @@ namespace Timer
         private void finished()
         {
             pbOne.Value = 100;
-            lblTime.Text = "";
             lblOne.Text = "Complete";
+            lblTime.Text = "";
+            lblPercent.Text = "";
             go = false;
         }
 
         private void updateLbls()
         {
+            if (!go)
+            {
+                return;
+            }
+
+
             string hour;
             string min;
             string sec;
@@ -138,34 +157,6 @@ namespace Timer
             dblRatio = (countOne / countTwo) * 100;
             percent = ((int)dblRatio);
             lblPercent.Text = percent.ToString() + "%";
-
-            //countThree = ((int)countTwo - (int)countOne);
-            //DateTime dtCount = new DateTime(2022, 1, 1, 0, 00, 00);
-            //for (int i = 0; i < countThree; i++)
-            //{
-            //    dtCount.AddSeconds(1);
-            //}
-
-            //remHour = dtCount.Hour.ToString();
-            //if (dtCount.Minute < 10) 
-            //{
-            //    remMin = "0" + dtCount.Minute.ToString();
-            //}
-            //else
-            //{
-            //    remMin = dtCount.Minute.ToString();
-            //}
-
-            //if (dtCount.Second < 10)
-            //{
-            //    remSec = "0" + dtCount.Second.ToString();
-            //}
-            //else
-            //{
-            //    remSec = dtCount.Second.ToString();
-            //}
-
-            //lblRemain.Text = remHour + ":" + remMin + ":" + remSec;
 
             if (dtCurrent.Hour > 12)
             {
@@ -324,6 +315,8 @@ namespace Timer
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            pbOne.MarqueeAnimationSpeed = 10;
+            pbOne.Style = ProgressBarStyle.Marquee;
             lblPercent.Text = "";
             lblTime.Text = "";
             lblOne.Text = "Welcome";
@@ -346,7 +339,9 @@ namespace Timer
             {
                 tbCurrentMin.Text = init.Minute.ToString();
             }
-            tbInHour.Focus();
+            //give tbInHour focus
+            this.ActiveControl = tbInHour;
+            initColors();
         }
 
         private void lblOne_Click(object sender, EventArgs e)
@@ -419,6 +414,90 @@ namespace Timer
             rbOutPM.Checked = true;
         }
 
+        private void initColors()
+        {
+            pbOne.ForeColor = Color.Yellow;
+            lblAndBtnColorChanger(255, 255, 192);
+        }
+
+        private void btnColor_Click(object sender, EventArgs e)
+        {
+            const int numOfColors = 5;
+            colorState++;
+            if (colorState >= numOfColors)
+            {
+                colorState = 0;
+            }
+            switch (colorState)
+            {
+                case 0:
+                    pbOne.ForeColor = Color.Yellow;
+                    lblAndBtnColorChanger(255, 255, 192);
+                    break;
+                case 1:
+                    pbOne.ForeColor = Color.MediumPurple;
+                    lblAndBtnColorChanger(255, 192, 255);
+                    break;
+                case 2:
+                    pbOne.ForeColor = Color.CornflowerBlue;
+                    lblAndBtnColorChanger(192, 255, 255);
+                    break;
+                case 3:
+                    pbOne.ForeColor = Color.Red;
+                    lblAndBtnColorChanger(255, 100, 100);
+                    break;
+                case 4:
+                default:
+                    pbOne.ForeColor = Color.LawnGreen;
+                    lblAndBtnColorChanger(128, 255, 128);
+                    break;
+            }
+        }
+
+        private void lblAndBtnColorChanger (int one, int two, int three)
+        {
+            btnExit.ForeColor = Color.FromArgb(one, two, three);
+            btnStart.ForeColor = Color.FromArgb(one, two, three);
+            btnClear.ForeColor = Color.FromArgb(one, two, three);
+            tbInMin.ForeColor = Color.FromArgb(one, two, three);
+            tbInHour.ForeColor = Color.FromArgb(one, two, three);
+            tbCurrentMin.ForeColor = Color.FromArgb(one, two, three);
+            tbCurrentHour.ForeColor = Color.FromArgb(one, two, three);
+            tbOutMin.ForeColor = Color.FromArgb(one, two, three);
+            tbOutHour.ForeColor = Color.FromArgb(one, two, three);
+            rbInAM.ForeColor = Color.FromArgb(one, two, three);
+            rbInPM.ForeColor = Color.FromArgb(one, two, three);
+            rbCurrentAM.ForeColor = Color.FromArgb(one, two, three);
+            rbCurrentPM.ForeColor = Color.FromArgb(one, two, three);
+            rbOutAM.ForeColor = Color.FromArgb(one, two, three);
+            rbOutPM.ForeColor = Color.FromArgb(one, two, three);
+            lblTime.ForeColor = Color.FromArgb(one, two, three);
+            lblPercent.ForeColor = Color.FromArgb(one, two, three);
+            lblOne.ForeColor = Color.FromArgb(one, two, three);
+            btnColor.ForeColor = Color.FromArgb(one, two, three);
+            btnStats.ForeColor = Color.FromArgb(one, two, three);
+            btnView.ForeColor = Color.FromArgb(one, two, three);
+
+        }
+
+        private void pbOne_Click(object sender, EventArgs e)
+        {
+            if (view)
+            {
+                if (specialView)
+                {
+                    this.Size = new Size(850, 109);
+                    specialView = false;
+                    return;
+                }
+
+                this.Size = new Size(850, 79);
+                specialView = true;
+                return;
+            }
+
+        }
+
         private void lblTime_Click(object sender, EventArgs e)
         {
 
@@ -428,6 +507,8 @@ namespace Timer
         {
             pbOne.PerformStep();
         }
+
+
 
         private void assignDateTimes()
         {

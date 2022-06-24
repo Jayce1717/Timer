@@ -29,6 +29,7 @@ namespace Timer
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tbCurrentHour = new System.Windows.Forms.TextBox();
             this.tbCurrentMin = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@ namespace Timer
             this.lblPercent = new System.Windows.Forms.Label();
             this.lblStatPercent = new System.Windows.Forms.Label();
             this.lblStatusLabel = new System.Windows.Forms.Label();
+            this.btnColor = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,28 +69,28 @@ namespace Timer
             // tbCurrentHour
             // 
             this.tbCurrentHour.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbCurrentHour.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbCurrentHour.Location = new System.Drawing.Point(385, 124);
+            this.tbCurrentHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbCurrentHour.Location = new System.Drawing.Point(385, 126);
             this.tbCurrentHour.Name = "tbCurrentHour";
             this.tbCurrentHour.Size = new System.Drawing.Size(25, 20);
-            this.tbCurrentHour.TabIndex = 0;
+            this.tbCurrentHour.TabIndex = 2;
             this.tbCurrentHour.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // tbCurrentMin
             // 
             this.tbCurrentMin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbCurrentMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbCurrentMin.Location = new System.Drawing.Point(416, 124);
+            this.tbCurrentMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbCurrentMin.Location = new System.Drawing.Point(416, 126);
             this.tbCurrentMin.Name = "tbCurrentMin";
             this.tbCurrentMin.Size = new System.Drawing.Size(25, 20);
-            this.tbCurrentMin.TabIndex = 1;
+            this.tbCurrentMin.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(181, 123);
+            this.label1.Location = new System.Drawing.Point(181, 127);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 2;
@@ -100,7 +102,7 @@ namespace Timer
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(210, 163);
+            this.label2.Location = new System.Drawing.Point(210, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 5;
@@ -110,27 +112,27 @@ namespace Timer
             // tbOutMin
             // 
             this.tbOutMin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbOutMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbOutMin.Location = new System.Drawing.Point(416, 164);
+            this.tbOutMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbOutMin.Location = new System.Drawing.Point(416, 166);
             this.tbOutMin.Name = "tbOutMin";
             this.tbOutMin.Size = new System.Drawing.Size(25, 20);
-            this.tbOutMin.TabIndex = 4;
+            this.tbOutMin.TabIndex = 5;
             // 
             // tbOutHour
             // 
             this.tbOutHour.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbOutHour.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbOutHour.Location = new System.Drawing.Point(385, 164);
+            this.tbOutHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbOutHour.Location = new System.Drawing.Point(385, 166);
             this.tbOutHour.Name = "tbOutHour";
             this.tbOutHour.Size = new System.Drawing.Size(25, 20);
-            this.tbOutHour.TabIndex = 3;
+            this.tbOutHour.TabIndex = 4;
             // 
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnClear.Location = new System.Drawing.Point(462, 84);
+            this.btnClear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnClear.Location = new System.Drawing.Point(462, 85);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(75, 23);
             this.btnClear.TabIndex = 6;
@@ -142,8 +144,8 @@ namespace Timer
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExit.Location = new System.Drawing.Point(462, 162);
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnExit.Location = new System.Drawing.Point(462, 165);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 7;
@@ -156,7 +158,7 @@ namespace Timer
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(224, 83);
+            this.label3.Location = new System.Drawing.Point(224, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 18);
             this.label3.TabIndex = 10;
@@ -166,30 +168,30 @@ namespace Timer
             // tbInMin
             // 
             this.tbInMin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbInMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbInMin.Location = new System.Drawing.Point(416, 84);
+            this.tbInMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbInMin.Location = new System.Drawing.Point(416, 86);
             this.tbInMin.Name = "tbInMin";
             this.tbInMin.Size = new System.Drawing.Size(25, 20);
-            this.tbInMin.TabIndex = 9;
+            this.tbInMin.TabIndex = 1;
             // 
             // tbInHour
             // 
             this.tbInHour.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tbInHour.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbInHour.Location = new System.Drawing.Point(385, 84);
+            this.tbInHour.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tbInHour.Location = new System.Drawing.Point(385, 86);
             this.tbInHour.Name = "tbInHour";
             this.tbInHour.Size = new System.Drawing.Size(25, 20);
-            this.tbInHour.TabIndex = 8;
+            this.tbInHour.TabIndex = 0;
             // 
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStart.Location = new System.Drawing.Point(462, 123);
+            this.btnStart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnStart.Location = new System.Drawing.Point(462, 125);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(75, 23);
-            this.btnStart.TabIndex = 11;
+            this.btnStart.TabIndex = 6;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = false;
             this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
@@ -199,14 +201,16 @@ namespace Timer
             this.pbOne.Location = new System.Drawing.Point(17, 8);
             this.pbOne.Name = "pbOne";
             this.pbOne.Size = new System.Drawing.Size(800, 23);
+            this.pbOne.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbOne.TabIndex = 12;
+            this.pbOne.Click += new System.EventHandler(this.pbOne_Click);
             // 
             // rbCurrentAM
             // 
             this.rbCurrentAM.AutoSize = true;
             this.rbCurrentAM.Checked = true;
-            this.rbCurrentAM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbCurrentAM.Location = new System.Drawing.Point(6, 9);
+            this.rbCurrentAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rbCurrentAM.Location = new System.Drawing.Point(6, 12);
             this.rbCurrentAM.Name = "rbCurrentAM";
             this.rbCurrentAM.Size = new System.Drawing.Size(41, 17);
             this.rbCurrentAM.TabIndex = 13;
@@ -217,8 +221,8 @@ namespace Timer
             // rbCurrentPM
             // 
             this.rbCurrentPM.AutoSize = true;
-            this.rbCurrentPM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbCurrentPM.Location = new System.Drawing.Point(53, 9);
+            this.rbCurrentPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rbCurrentPM.Location = new System.Drawing.Point(53, 12);
             this.rbCurrentPM.Name = "rbCurrentPM";
             this.rbCurrentPM.Size = new System.Drawing.Size(41, 17);
             this.rbCurrentPM.TabIndex = 14;
@@ -239,7 +243,7 @@ namespace Timer
             // 
             this.groupBox2.Controls.Add(this.rbInAM);
             this.groupBox2.Controls.Add(this.rbInPM);
-            this.groupBox2.Location = new System.Drawing.Point(285, 76);
+            this.groupBox2.Location = new System.Drawing.Point(285, 75);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(97, 36);
             this.groupBox2.TabIndex = 20;
@@ -249,8 +253,8 @@ namespace Timer
             // 
             this.rbInAM.AutoSize = true;
             this.rbInAM.Checked = true;
-            this.rbInAM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbInAM.Location = new System.Drawing.Point(6, 9);
+            this.rbInAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rbInAM.Location = new System.Drawing.Point(6, 12);
             this.rbInAM.Name = "rbInAM";
             this.rbInAM.Size = new System.Drawing.Size(41, 17);
             this.rbInAM.TabIndex = 13;
@@ -261,8 +265,8 @@ namespace Timer
             // rbInPM
             // 
             this.rbInPM.AutoSize = true;
-            this.rbInPM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbInPM.Location = new System.Drawing.Point(53, 9);
+            this.rbInPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.rbInPM.Location = new System.Drawing.Point(53, 12);
             this.rbInPM.Name = "rbInPM";
             this.rbInPM.Size = new System.Drawing.Size(41, 17);
             this.rbInPM.TabIndex = 14;
@@ -282,8 +286,8 @@ namespace Timer
             // rbOutAM
             // 
             this.rbOutAM.AutoSize = true;
-            this.rbOutAM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbOutAM.Location = new System.Drawing.Point(6, 9);
+            this.rbOutAM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rbOutAM.Location = new System.Drawing.Point(6, 12);
             this.rbOutAM.Name = "rbOutAM";
             this.rbOutAM.Size = new System.Drawing.Size(41, 17);
             this.rbOutAM.TabIndex = 13;
@@ -294,8 +298,8 @@ namespace Timer
             // 
             this.rbOutPM.AutoSize = true;
             this.rbOutPM.Checked = true;
-            this.rbOutPM.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rbOutPM.Location = new System.Drawing.Point(53, 9);
+            this.rbOutPM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.rbOutPM.Location = new System.Drawing.Point(53, 12);
             this.rbOutPM.Name = "rbOutPM";
             this.rbOutPM.Size = new System.Drawing.Size(41, 17);
             this.rbOutPM.TabIndex = 14;
@@ -306,8 +310,8 @@ namespace Timer
             // lblOne
             // 
             this.lblOne.AutoSize = true;
-            this.lblOne.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOne.Location = new System.Drawing.Point(334, 44);
+            this.lblOne.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblOne.Location = new System.Drawing.Point(60, 131);
             this.lblOne.Name = "lblOne";
             this.lblOne.Size = new System.Drawing.Size(37, 13);
             this.lblOne.TabIndex = 21;
@@ -318,8 +322,8 @@ namespace Timer
             // 
             this.btnView.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnView.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnView.Location = new System.Drawing.Point(11, 39);
+            this.btnView.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnView.Location = new System.Drawing.Point(11, 41);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(70, 23);
             this.btnView.TabIndex = 22;
@@ -331,8 +335,8 @@ namespace Timer
             // 
             this.btnStats.BackColor = System.Drawing.SystemColors.ControlText;
             this.btnStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStats.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStats.Location = new System.Drawing.Point(91, 39);
+            this.btnStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnStats.Location = new System.Drawing.Point(87, 41);
             this.btnStats.Name = "btnStats";
             this.btnStats.Size = new System.Drawing.Size(70, 23);
             this.btnStats.TabIndex = 23;
@@ -344,8 +348,8 @@ namespace Timer
             // 
             this.lblTime.AutoSize = true;
             this.lblTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblTime.Location = new System.Drawing.Point(741, 39);
+            this.lblTime.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblTime.Location = new System.Drawing.Point(741, 41);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(79, 20);
             this.lblTime.TabIndex = 24;
@@ -357,7 +361,7 @@ namespace Timer
             this.lblStatTime.AutoSize = true;
             this.lblStatTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatTime.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStatTime.Location = new System.Drawing.Point(654, 40);
+            this.lblStatTime.Location = new System.Drawing.Point(654, 42);
             this.lblStatTime.Name = "lblStatTime";
             this.lblStatTime.Size = new System.Drawing.Size(93, 18);
             this.lblStatTime.TabIndex = 26;
@@ -367,8 +371,8 @@ namespace Timer
             // 
             this.lblPercent.AutoSize = true;
             this.lblPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPercent.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblPercent.Location = new System.Drawing.Point(598, 39);
+            this.lblPercent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.lblPercent.Location = new System.Drawing.Point(598, 41);
             this.lblPercent.Name = "lblPercent";
             this.lblPercent.Size = new System.Drawing.Size(54, 20);
             this.lblPercent.TabIndex = 28;
@@ -379,7 +383,7 @@ namespace Timer
             this.lblStatPercent.AutoSize = true;
             this.lblStatPercent.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatPercent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStatPercent.Location = new System.Drawing.Point(471, 40);
+            this.lblStatPercent.Location = new System.Drawing.Point(471, 42);
             this.lblStatPercent.Name = "lblStatPercent";
             this.lblStatPercent.Size = new System.Drawing.Size(128, 18);
             this.lblStatPercent.TabIndex = 29;
@@ -390,18 +394,32 @@ namespace Timer
             this.lblStatusLabel.AutoSize = true;
             this.lblStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblStatusLabel.Location = new System.Drawing.Point(288, 44);
+            this.lblStatusLabel.Location = new System.Drawing.Point(14, 131);
             this.lblStatusLabel.Name = "lblStatusLabel";
             this.lblStatusLabel.Size = new System.Drawing.Size(47, 13);
             this.lblStatusLabel.TabIndex = 30;
             this.lblStatusLabel.Text = "Status:";
+            // 
+            // btnColor
+            // 
+            this.btnColor.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnColor.Location = new System.Drawing.Point(163, 41);
+            this.btnColor.Name = "btnColor";
+            this.btnColor.Size = new System.Drawing.Size(70, 23);
+            this.btnColor.TabIndex = 31;
+            this.btnColor.Text = "Color";
+            this.btnColor.UseVisualStyleBackColor = false;
+            this.btnColor.Click += new System.EventHandler(this.btnColor_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(834, 202);
+            this.ClientSize = new System.Drawing.Size(834, 203);
+            this.Controls.Add(this.btnColor);
             this.Controls.Add(this.lblStatusLabel);
             this.Controls.Add(this.lblStatPercent);
             this.Controls.Add(this.lblPercent);
@@ -427,6 +445,7 @@ namespace Timer
             this.Controls.Add(this.tbCurrentMin);
             this.Controls.Add(this.tbCurrentHour);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Jayces Timer";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -473,6 +492,7 @@ namespace Timer
         private System.Windows.Forms.Label lblPercent;
         private System.Windows.Forms.Label lblStatPercent;
         private System.Windows.Forms.Label lblStatusLabel;
+        private System.Windows.Forms.Button btnColor;
     }
 }
 
