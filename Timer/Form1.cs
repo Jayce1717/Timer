@@ -43,7 +43,7 @@ namespace Timer
             dtIn = new DateTime(2022, 1, 1, 12, 00, 00);
             dtOut= new DateTime(2022, 1, 1, 12, 00, 00);
             dtCurrent = new DateTime(2022, 1, 1, 12, 00, 00);
-            lblOne.Text = "Status";
+            lblOne.Text = "Cleared";
             lblTime.Text = "";
         }
 
@@ -59,7 +59,6 @@ namespace Timer
                 lblOne.Text = "Invalid";
                 return;
             }
-            lblOne.Text = "Status";
             assignDateTimes();
             initLB();
             go = true;
@@ -70,6 +69,7 @@ namespace Timer
         {
             dtSec = DateTime.Now.AddSeconds(1);
             while (go) {
+                lblOne.Text = "Running";
                 Application.DoEvents();
                 updateLbls();
                 if (hasBeenSecond() == true)
@@ -80,7 +80,6 @@ namespace Timer
                 }
                 go = doneCheck();
             }
-            lblTime.Text = "";
             return;
         }
 
@@ -327,6 +326,7 @@ namespace Timer
         {
             lblPercent.Text = "";
             lblTime.Text = "";
+            lblOne.Text = "Welcome";
             DateTime init = DateTime.Now;
             if (init.Hour > 12)
             {
@@ -380,6 +380,43 @@ namespace Timer
             lblTime.Visible = !lblTime.Visible;
             lblOne.Visible = !lblOne.Visible;
             lblStatusLabel.Visible = !lblStatusLabel.Visible;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            DateTime init = DateTime.Now;
+            if (init.Hour > 12)
+            {
+                tbCurrentHour.Text = (init.Hour - 12).ToString();
+                rbCurrentPM.Checked = true;
+            }
+            else
+            {
+                tbCurrentHour.Text = init.Hour.ToString();
+                rbCurrentAM.Checked = true;
+            }
+            if (init.Minute < 10)
+            {
+                tbCurrentMin.Text = "0" + init.Minute.ToString();
+            }
+            else
+            {
+                tbCurrentMin.Text = init.Minute.ToString();
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            tbInHour.Text = "9";
+            tbInMin.Text = "00";
+            rbInAM.Checked = true;
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            tbOutHour.Text = "5";
+            tbOutMin.Text = "00";
+            rbOutPM.Checked = true;
         }
 
         private void lblTime_Click(object sender, EventArgs e)

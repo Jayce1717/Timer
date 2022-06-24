@@ -86,30 +86,32 @@ namespace Timer
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(186, 123);
+            this.label1.Location = new System.Drawing.Point(181, 123);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 18);
+            this.label1.Size = new System.Drawing.Size(106, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Current time:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(211, 165);
+            this.label2.Location = new System.Drawing.Point(210, 163);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(68, 18);
+            this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 5;
             this.label2.Text = "Out time:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tbOutMin
             // 
             this.tbOutMin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbOutMin.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbOutMin.Location = new System.Drawing.Point(416, 166);
+            this.tbOutMin.Location = new System.Drawing.Point(416, 164);
             this.tbOutMin.Name = "tbOutMin";
             this.tbOutMin.Size = new System.Drawing.Size(25, 20);
             this.tbOutMin.TabIndex = 4;
@@ -118,7 +120,7 @@ namespace Timer
             // 
             this.tbOutHour.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tbOutHour.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.tbOutHour.Location = new System.Drawing.Point(385, 166);
+            this.tbOutHour.Location = new System.Drawing.Point(385, 164);
             this.tbOutHour.Name = "tbOutHour";
             this.tbOutHour.Size = new System.Drawing.Size(25, 20);
             this.tbOutHour.TabIndex = 3;
@@ -126,6 +128,7 @@ namespace Timer
             // btnClear
             // 
             this.btnClear.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClear.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnClear.Location = new System.Drawing.Point(462, 84);
             this.btnClear.Name = "btnClear";
@@ -138,8 +141,9 @@ namespace Timer
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExit.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExit.Location = new System.Drawing.Point(462, 164);
+            this.btnExit.Location = new System.Drawing.Point(462, 162);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(75, 23);
             this.btnExit.TabIndex = 7;
@@ -150,13 +154,14 @@ namespace Timer
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label3.Location = new System.Drawing.Point(224, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 18);
+            this.label3.Size = new System.Drawing.Size(63, 18);
             this.label3.TabIndex = 10;
             this.label3.Text = "In time:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // tbInMin
             // 
@@ -179,6 +184,7 @@ namespace Timer
             // btnStart
             // 
             this.btnStart.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStart.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnStart.Location = new System.Drawing.Point(462, 123);
             this.btnStart.Name = "btnStart";
@@ -267,7 +273,7 @@ namespace Timer
             // 
             this.groupBox3.Controls.Add(this.rbOutAM);
             this.groupBox3.Controls.Add(this.rbOutPM);
-            this.groupBox3.Location = new System.Drawing.Point(285, 158);
+            this.groupBox3.Location = new System.Drawing.Point(285, 156);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(97, 36);
             this.groupBox3.TabIndex = 20;
@@ -301,7 +307,7 @@ namespace Timer
             // 
             this.lblOne.AutoSize = true;
             this.lblOne.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblOne.Location = new System.Drawing.Point(325, 44);
+            this.lblOne.Location = new System.Drawing.Point(334, 44);
             this.lblOne.Name = "lblOne";
             this.lblOne.Size = new System.Drawing.Size(37, 13);
             this.lblOne.TabIndex = 21;
@@ -311,6 +317,7 @@ namespace Timer
             // btnView
             // 
             this.btnView.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnView.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnView.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnView.Location = new System.Drawing.Point(11, 39);
             this.btnView.Name = "btnView";
@@ -323,6 +330,7 @@ namespace Timer
             // btnStats
             // 
             this.btnStats.BackColor = System.Drawing.SystemColors.ControlText;
+            this.btnStats.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnStats.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnStats.Location = new System.Drawing.Point(91, 39);
             this.btnStats.Name = "btnStats";
@@ -380,10 +388,11 @@ namespace Timer
             // lblStatusLabel
             // 
             this.lblStatusLabel.AutoSize = true;
+            this.lblStatusLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatusLabel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblStatusLabel.Location = new System.Drawing.Point(288, 44);
             this.lblStatusLabel.Name = "lblStatusLabel";
-            this.lblStatusLabel.Size = new System.Drawing.Size(40, 13);
+            this.lblStatusLabel.Size = new System.Drawing.Size(47, 13);
             this.lblStatusLabel.TabIndex = 30;
             this.lblStatusLabel.Text = "Status:";
             // 
