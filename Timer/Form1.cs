@@ -59,7 +59,7 @@ namespace Timer
         private void btnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(Environment.ExitCode);
-            //System.Windows.Forms.Application.Exit();  
+            System.Windows.Forms.Application.Exit();  
         }
 
         private void btnStart_Click(object sender, EventArgs e)
