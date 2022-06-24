@@ -32,8 +32,11 @@ namespace Timer
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-            cleared = true;
-            tbInHour.Text = "";
+            if (go)
+            {
+                cleared = true;
+            }
+                tbInHour.Text = "";
             tbInMin.Text = "";
             tbCurrentHour.Text = "";
             tbCurrentMin.Text = "";
