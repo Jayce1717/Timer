@@ -113,10 +113,9 @@ namespace Timer
 
         private void finished()
         {
-            pbOne.Value = 100;
             lblOne.Text = "Complete";
             lblTime.Text = "";
-            lblPercent.Text = "";
+            lblPercent.Text = "100";
             go = false;
         }
 
