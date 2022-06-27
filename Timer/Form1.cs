@@ -53,7 +53,6 @@ namespace Timer
             lblOne.Text = "Cleared";
             lblTime.Text = "";
             lblPercent.Text = "";
-            pbOne.Style = ProgressBarStyle.Marquee;
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -317,8 +316,6 @@ namespace Timer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            pbOne.MarqueeAnimationSpeed = 10;
-            pbOne.Style = ProgressBarStyle.Marquee;
             lblPercent.Text = "";
             lblTime.Text = "";
             lblOne.Text = "Welcome";
